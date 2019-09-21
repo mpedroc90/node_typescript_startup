@@ -1,8 +1,22 @@
 import { Router } from "express";
-const router = Router();
-// we will add routes to this default router in future
+import { HomeController } from "./controllers";
+import { RoutesInfo, RouteInfo } from "../vendors/router_helper"
 
-router.get("/", (req, res) => {
-  return res.end("Hello Word");
+type ControllerRouted =  HomeController & {
+  RouteInfo : RoutesInfo
+};
+const router = Router();
+
+const controllers = [ 
+    new HomeController() 
+];
+
+controllers.forEach((controller: ControllerRouted) => {
+  const routesInfo = controller.RouteInfo;
+  routesInfo.Routes.forEach((t:RouteInfo) => {
+    console.log(`${routesInfo.GlobalRoutePrefix}${t.suffix}`);
+    router[t.method](`${routesInfo.GlobalRoutePrefix}${t.suffix}`, t.function);
+  });
 })
+
 export default router;
