@@ -1,10 +1,6 @@
 import { Router } from "express";
 import { HomeController } from "./controllers";
-import { RouteInfo, MapToControllersRouted } from "../vendors/route_extentions"
-
-type ControllerRouted =  HomeController & {
-  Routes: RouteInfo []
-};
+import { RouteInfo, MapToControllersRouted , ControllerRouted } from "../vendors/route_extentions"
 
 const router = Router();
 
