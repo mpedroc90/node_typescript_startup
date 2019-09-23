@@ -1,6 +1,6 @@
 
 import express from "express";
-import { Routes , Get } from "..";
+import { Routes , Get, ControllerRouted } from "..";
 
 
 @Routes("Prefix")
@@ -12,7 +12,7 @@ class FakeController {
 }
 
 test("Testing Routes decorator", () => {
-  const homeController = new FakeController() as any;
+  const homeController :FakeController & ControllerRouted = new FakeController();
   expect(homeController).toHaveProperty("Routes");
   expect(homeController.Routes).toBeInstanceOf(Array); 
   expect(homeController.Routes).toHaveLength(1);
