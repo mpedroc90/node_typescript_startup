@@ -1,6 +1,7 @@
 module.exports = {
   "roots": [
-      "<rootDir>/test"
+      "<rootDir>/test",
+      "<rootDir>/vendors/route_extentions/test",
   ],
   "transform": {
       "^.+\\.ts$": "ts-jest"

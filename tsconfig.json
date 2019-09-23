@@ -21,6 +21,6 @@
   },
   "include": [
       "src/**/*",
-      "test/**/*", "test/foo.test.ts", "vendors"
+      "test/**/*", "test/home.controller.test.ts", "vendors"
   ]
 }
