@@ -14,5 +14,5 @@ export type RouteInfo = {
 };
 
 export type ControllerRouted = {
-  Routes: RouteInfo []
+  Routes?: RouteInfo []
 };
